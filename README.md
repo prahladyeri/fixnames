@@ -1,5 +1,5 @@
 # Introduction
-*fixnames* is a utility to scan and fix filenames with special characters by renaming them.
+*fixnames* is a utility to scan and fix linux filenames with special characters by renaming them.
 
 # Synopsis
 
