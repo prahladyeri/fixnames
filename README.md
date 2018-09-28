@@ -3,7 +3,7 @@
 
 # Synopsis
 
-Linux is liberal in letting us choosing filenames, so sometimes we end up choosing filenames with special characters such as `|, [, ], etc`. When you later transfer these files to other operating systems like Windows or Android, they fail to work properly. `fixnames` is a Python utility to scan and fix such files on your linux system. `fixnames` scans filenames recursively in a given directory and fixes them by renaming.
+Linux is liberal in letting us choose filenames, so sometimes we end up choosing files with special characters such as `|, [, ], etc`. When you try to use these files on other operating systems like Windows or Android, they fail to work properly. `fixnames` is a Python utility to scan and fix such files on your linux system. `fixnames` scans filenames recursively in a given directory and fixes them by renaming.
 
 # Installation
 ```
