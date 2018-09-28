@@ -17,6 +17,6 @@ pip3 install fixnames
 
 ```
 fixnames ./
-Renamed: ../test[.txt to ../test.txt
+Renamed: ./test[.txt to ./test.txt
 Done
 ```
