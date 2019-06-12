@@ -1,61 +1,46 @@
 #!/usr/bin/env python3
-import os
-import sys
+import os, sys
+import fixnames
+from fixnames import __version__, __description__, __author__, __email__, __license__
+from setuptools import setup, find_packages
 
-def uninstall_parts(package):
-	pass
-	#~ import shutil
-	#~ #sys.prefix
-	#~ loc=os.sep.join([sys.prefix, 'lib', 'python' + sys.version[:3], 'site-packages', package]) #try sys.prefix
-	#~ if os.path.exists(loc):
-		#~ print('Removing files from ' + loc)
-		#~ shutil.rmtree(loc,ignore_errors=False)
-	#~ loc=os.sep.join([sys.prefix, 'lib', 'python' + sys.version[:3], 'dist-packages', package]) #try dist-packages
-	#~ if os.path.exists(loc):
-		#~ print('Removing files from ' + loc)
-		#~ shutil.rmtree(loc,ignore_errors=False)
-	
-	#~ #/usr/local
-	#~ loc=os.sep.join(['/usr/local', 'lib', 'python' + sys.version[:3], 'site-packages', package]) #try sys.prefix
-	#~ if os.path.exists(loc):
-		#~ print('Removing files from ' + loc)
-		#~ shutil.rmtree(loc,ignore_errors=False)
-	#~ loc=os.sep.join(['/usr/local', 'lib', 'python' + sys.version[:3], 'dist-packages', package]) #try dist-packages
-	#~ if os.path.exists(loc):
-		#~ print('Removing files from ' + loc)
-		#~ shutil.rmtree(loc,ignore_errors=False)
-		
-	#~ if os.path.exists('/usr/local/bin/' + package):
-		#~ print('Removing file: /usr/local/bin/' + package)
-		#~ try: os.remove('/usr/local/bin/' + package)
-		#~ except: pass
-	#~ if os.path.exists('/usr/bin/' + package):
-		#~ print('Removing file: /usr/bin/' + package)
-		#~ try: os.remove('/usr/bin/' + package)
-		#~ except: pass
-	#~ if os.path.islink('/usr/bin/' + package):
-		#~ print('Removing link: /usr/bin/' + package)
-		#~ try: os.remove('/usr/bin/' + package)
-		#~ except: pass
+def read(fname):
+    return open(os.path.join(os.path.dirname(__file__), fname)).read()
 
-if 'uninstall' in sys.argv:
-	print('Uninstall complete')
-	sys.exit(0)
-
-#INSTALL IT
-#the_version = open("VERSION").read().strip()
-from distutils.core import setup
-s = setup(name='fixnames',
-	version="0.1",
-	description='Utility to scan and fix filenames with special characters by renaming them.',
-	license='MIT',
-	author='Prahlad Yeri',
-	author_email='prahladyeri@yahoo.com',
+s = setup(
+	name='fixnames',
+	version=__version__,
+	license=__license__,
+	description=__description__,
+	long_description=read("README.md"),
+	long_description_content_type='text/markdown',
+	keywords="utility,linux,windows",
 	url='https://github.com/prahladyeri/fixnames',
-	#py_modules=['hotspotd','cli'],
-	packages=['fixnames'],
-	package_dir={'fixnames': ''},
-	package_data={'fixnames': ['./']},
-	scripts=['./fixnames']
-	#data_files=[('config',['run.dat'])],
+	packages=find_packages(),
+	include_package_data=True,
+	entry_points={
+		"console_scripts": [
+			"fixnames = fixnames.fixnames:main",
+		],
+	},
+	install_requires=['requests'],
+	author=__author__,
+	author_email=__email__,
 	)
+
+
+# ~ from distutils.core import setup
+# ~ s = setup(name='fixnames',
+	# ~ version="0.1",
+	# ~ description='Utility to scan and fix filenames with special characters by renaming them.',
+	# ~ license='MIT',
+	# ~ author='Prahlad Yeri',
+	# ~ author_email='prahladyeri@yahoo.com',
+	# ~ url='https://github.com/prahladyeri/fixnames',
+	# ~ #py_modules=['hotspotd','cli'],
+	# ~ packages=['fixnames'],
+	# ~ package_dir={'fixnames': ''},
+	# ~ package_data={'fixnames': ['./']},
+	# ~ scripts=['./fixnames']
+	# ~ #data_files=[('config',['run.dat'])],
+	# ~ )

@@ -7,11 +7,11 @@ Linux is liberal in letting us choose filenames, so sometimes we end up choosing
 
 # Installation
 ```
-pip3 install fixnames
+pip install fixnames
 ```
 
 # Uninstallation
-```pip3 uninstall fixnames```
+```pip uninstall fixnames```
 
 # Usage
 
@@ -20,3 +20,9 @@ fixnames ./
 Renamed: ./test[.txt to ./test.txt
 Done
 ```
+# Notes
+
+According to Wikipedia, these are the special characters which aren't allowed on NTFS file systems:
+
+	0x00-0x1F 0x7F " * / : < > ? \ |
+	
