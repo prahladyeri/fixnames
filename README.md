@@ -17,9 +17,15 @@ pip uninstall fixnames
 
 # Usage
 ```
-fixnames ./
-Renamed: ./test[.txt to ./test.txt
-Done
+$ fixnames ./
+
+renaming files
+
+renaming directories
+renamed ./test/bing" to ./test/bing
+
+0 files renamed
+1 directories renamed
 ```
 
 # Notes
