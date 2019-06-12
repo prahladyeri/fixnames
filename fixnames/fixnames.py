@@ -9,7 +9,8 @@ import shutil
 import argparse
 
 #specialchars = r"|\\?*<\":>+\[\]/\'"
-specialchars = r"|\\?*<\":>\[\]/"
+#specialchars = r"|\\?*<\":>\[\]/"
+specialchars = r"|\\?*<\":>/"
 pattern = r'^.*[' + specialchars + '].*$'
 
 
