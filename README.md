@@ -11,18 +11,20 @@ pip install fixnames
 ```
 
 # Uninstallation
-```pip uninstall fixnames```
+```
+pip uninstall fixnames
+```
 
 # Usage
-
 ```
 fixnames ./
 Renamed: ./test[.txt to ./test.txt
 Done
 ```
+
 # Notes
 
-According to Wikipedia, these are the special characters which aren't allowed on NTFS file systems:
+According to [Wikipedia](https://en.wikipedia.org/wiki/Filename#Comparison_of_filename_limitations), these are the special characters which aren't allowed on NTFS file systems:
 
 	0x00-0x1F 0x7F " * / : < > ? \ |
 	
